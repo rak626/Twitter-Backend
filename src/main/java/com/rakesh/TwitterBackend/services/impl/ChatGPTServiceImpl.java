@@ -20,7 +20,7 @@ import java.util.Optional;
 public class ChatGPTServiceImpl implements ChatGPTService {
 
 
-    private static final String MESSAGE_ON_FAILED_QUERY = "Exception Occurred , Unable to prompt in ChatGPT";
+
 
     public ChatResponse getReply(ChatRequest chatRequest) {
 
@@ -35,7 +35,7 @@ public class ChatGPTServiceImpl implements ChatGPTService {
             e.printStackTrace();
         }
         return ChatResponse.builder()
-                .response(MESSAGE_ON_FAILED_QUERY)
+                .response(AppConstants.MESSAGE_ON_FAILED_QUERY)
                 .status(HttpStatus.NO_CONTENT)
                 .build();
     }
